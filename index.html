@@ -97,7 +97,7 @@
             pointer-events: none;
             z-index: 50;
             opacity: 0.05;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            
         }
 
         #project-modal {
@@ -105,6 +105,12 @@
         }
         #project-modal.open { opacity: 1; visibility: visible; }
         #project-modal.closed { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="font-body selection:bg-hot-pink selection:text-white">
@@ -192,7 +198,6 @@
                     </a>
                 </div>
 
-                <!-- Marquee Infinito -->
                 <div class="absolute bottom-10 left-0 w-full overflow-hidden border-t border-b border-gray-900 py-3 bg-void-black/50 backdrop-blur-sm">
                     <div class="whitespace-nowrap animate-marquee flex gap-8">
                         <span class="text-xl font-display font-bold text-gray-600 uppercase">Filmmaking • Creative Direction • UI Design • Branding • Social Media Strategy • Motion Graphics •</span>
@@ -201,15 +206,13 @@
                 </div>
             </section>
 
-            <!-- SEÇÃO SOBRE MIM (NOVA) -->
+            <!-- SOBRE MIM -->
             <section id="about" class="py-24 px-6 md:px-20 relative overflow-hidden">
                 <div class="grid md:grid-cols-12 gap-12 items-center">
-                    <!-- Foto / Visual -->
                     <div class="md:col-span-5 relative group">
                         <div class="absolute -inset-4 border border-hot-pink/30 translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
                         <div class="relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 bg-charcoal aspect-[4/5]">
-                            <!-- Placeholder para sua foto -->
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Carol Scomparim" class="w-full h-full object-cover">
+                            <img src="1 (1).jpeg" alt="Carol Scomparim" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-hot-pink flex items-center justify-center rounded-full animate-spin-slow hidden md:flex">
                             <span class="text-[10px] font-bold text-white text-center leading-tight uppercase tracking-widest p-4">
@@ -218,7 +221,6 @@
                         </div>
                     </div>
 
-                    <!-- Texto -->
                     <div class="md:col-span-7 space-y-8">
                         <h2 class="text-4xl md:text-6xl font-display font-bold leading-tight">
                             HIBRIDISMO ENTRE <br>
@@ -230,84 +232,169 @@
                                 Sou a Carol Scomparim, uma criativa multidisciplinar sediada em Sorocaba. Meu trabalho vive na intersecção onde o impacto visual encontra resultados tangíveis de negócio.
                             </p>
                             <p>
-                                Com background em <strong>Filmmaking</strong> e <strong>Design</strong>, acredito que cada marca possui uma frequência única. Meu papel é sintonizar essa frequência e transformá-la em narrativas visuais potentes, seja através de um videoclipe de 3 minutos ou uma identidade visual minimalista.
+                                Com background em <strong>Filmmaking</strong> e <strong>Design</strong>, acredito que cada marca possui uma frequência única. Meu papel é sintonizar essa frequência e transformá-la em narrativas visuais potentes.
                             </p>
-                            <p class="text-white font-medium">
-                                "Não apenas design, mas experiência. Não apenas vídeo, mas imersão."
-                            </p>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-8 pt-8">
-                            <div>
-                                <h4 class="text-hot-pink font-bold text-3xl font-display">5+</h4>
-                                <p class="text-xs uppercase tracking-widest text-gray-500">Anos de Experiência</p>
-                            </div>
-                            <div>
-                                <h4 class="text-hot-pink font-bold text-3xl font-display">100%</h4>
-                                <p class="text-xs uppercase tracking-widest text-gray-500">Comprometimento</p>
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Seção de Trabalhos -->
+            <!-- Seção de Trabalhos: VÍDEOS -->
             <section id="work" class="py-20 px-6 md:px-20 border-t border-gray-900">
                 <div class="flex items-end justify-between mb-16">
-                    <h2 class="text-4xl md:text-6xl font-display font-bold">PROJETOS <span class="text-hot-pink">.</span></h2>
-                    <span class="text-gray-500 text-sm hidden md:block">(Clique para expandir)</span>
+                    <div>
+                        <span class="text-hot-pink uppercase tracking-widest text-sm font-bold">Audiovisual</span>
+                        <h2 class="text-4xl md:text-6xl font-display font-bold">VÍDEOS <span class="text-hot-pink">.</span></h2>
+                    </div>
                 </div>
 
-                <div class="space-y-24">
-                    <!-- Projeto 1 -->
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Vídeo 1 -->
                     <div class="group relative nav-item cursor-pointer project-trigger" 
                          data-type="video" 
-                         data-title="NEON NIGHTS" 
-                         data-desc="Direção de Arte e Edição para videoclipe musical. Uso intensivo de After Effects."
-                         data-src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=0">
-                        <div class="grid md:grid-cols-2 gap-8 items-center">
-                            <div class="order-2 md:order-1">
-                                <span class="text-hot-pink text-xs font-bold tracking-widest uppercase mb-2 block">Filmmaking • Clique para assistir</span>
-                                <h3 class="text-3xl md:text-5xl font-display font-bold mb-4 group-hover:text-hot-pink transition-colors">NEON NIGHTS</h3>
-                                <p class="text-gray-400 mb-6 max-w-md">Direção e edição para clipe musical. Foco em color grading e transições dinâmicas que seguem o beat.</p>
-                                <ul class="flex gap-4 text-xs text-gray-500 uppercase">
-                                    <li class="border border-gray-800 px-3 py-1 rounded-full group-hover:border-hot-pink transition-colors">Assistir Vídeo <i data-lucide="play-circle" class="inline w-3 h-3 ml-1"></i></li>
-                                </ul>
-                            </div>
-                            <div class="order-1 md:order-2 overflow-hidden rounded-lg relative aspect-video">
-                                <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
-                                    <div class="w-16 h-16 bg-hot-pink/90 rounded-full flex items-center justify-center transform scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
-                                        <i data-lucide="play" class="w-6 h-6 text-white fill-current"></i>
-                                    </div>
+                         data-title="Vídeo Institucional | Aniversário da Empresa" 
+                         data-desc="Captação e Edição de Vídeo Institucional."
+                         data-src="VD (1).mp4">
+                        <div class="overflow-hidden rounded-lg relative aspect-video bg-charcoal">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                                <div class="w-16 h-16 bg-hot-pink/90 rounded-full flex items-center justify-center transform scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
+                                    <i data-lucide="play" class="w-6 h-6 text-white fill-current"></i>
                                 </div>
-                                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=800&auto=format&fit=crop" alt="Projeto 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0 grayscale">
                             </div>
+                            <img src="VD1.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
                         </div>
+                        <h3 class="text-xl font-display font-bold mt-4 group-hover:text-hot-pink transition-colors uppercase">01. Vídeo Institucional | Aniversário da Empresa</h3>
                     </div>
 
-                    <!-- Projeto 2 -->
-                    <div class="group relative nav-item cursor-pointer project-trigger"
-                         data-type="image" 
-                         data-title="VORTEX AGENCY" 
-                         data-desc="Identidade visual completa criada no Adobe Illustrator e Figma."
-                         data-src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1200&auto=format&fit=crop">
-                        <div class="grid md:grid-cols-2 gap-8 items-center">
-                            <div class="order-1 md:order-1 overflow-hidden rounded-lg relative aspect-video">
-                                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
-                                    <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center transform scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
-                                        <i data-lucide="zoom-in" class="w-6 h-6 text-black"></i>
-                                    </div>
+                    <!-- Vídeo 2 -->
+                    <div class="group relative nav-item cursor-pointer project-trigger" 
+                         data-type="video" 
+                         data-title="Vídeo Institucional | Encontro Técnico com Rede de Supermercados Parceira" 
+                         data-desc="Captação e Edição de Vídeo Institucional."
+                         data-src="VD (2).mp4">
+                        <div class="overflow-hidden rounded-lg relative aspect-video bg-charcoal">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                                <div class="w-16 h-16 bg-hot-pink/90 rounded-full flex items-center justify-center transform scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
+                                    <i data-lucide="play" class="w-6 h-6 text-white fill-current"></i>
                                 </div>
-                                <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop" alt="Projeto 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0 grayscale">
                             </div>
-                            <div class="order-2 md:order-2 md:pl-10">
-                                <span class="text-hot-pink text-xs font-bold tracking-widest uppercase mb-2 block">Design & Branding • Ver Detalhes</span>
-                                <h3 class="text-3xl md:text-5xl font-display font-bold mb-4 group-hover:text-hot-pink transition-colors">VORTEX AGENCY</h3>
-                                <p class="text-gray-400 mb-6 max-w-md">Rebranding completo para agência digital. Criação de logo, paleta de cores e material de papelaria.</p>
-                                <ul class="flex gap-4 text-xs text-gray-500 uppercase">
-                                    <li class="border border-gray-800 px-3 py-1 rounded-full group-hover:border-hot-pink transition-colors">Ver Projeto</li>
-                                </ul>
+                            <img src="VD2.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <h3 class="text-xl font-display font-bold mt-4 group-hover:text-hot-pink transition-colors uppercase">02. Vídeo Institucional | Encontro Técnico</h3>
+                    </div>
+
+                    <!-- Vídeo 3 -->
+                    <div class="group relative nav-item cursor-pointer project-trigger" 
+                         data-type="video" 
+                         data-title="Procedimento Hydra Gloss| Vídeo Profissional" 
+                         data-desc="Captação e Edição de Vídeo Profissional."
+                         data-src="videoboca.mp4">
+                        <div class="overflow-hidden rounded-lg relative aspect-video bg-charcoal">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                                <div class="w-16 h-16 bg-hot-pink/90 rounded-full flex items-center justify-center transform scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
+                                    <i data-lucide="play" class="w-6 h-6 text-white fill-current"></i>
+                                </div>
                             </div>
+                            <img src="VD3.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <h3 class="text-xl font-display font-bold mt-4 group-hover:text-hot-pink transition-colors uppercase">03. Procedimento Hydra Gloss| Vídeo Profissional</h3>
+                    </div>
+
+                    <!-- Vídeo 4 -->
+                    <div class="group relative nav-item cursor-pointer project-trigger" 
+                         data-type="video" 
+                         data-title="Procedimento Henna & Design de Sobrancelhas | Vídeo Profissional" 
+                         data-desc="Captação e Edição de Vídeo Profissional."
+                         data-src="rebustinisbeauty.mp4">
+                        <div class="overflow-hidden rounded-lg relative aspect-video bg-charcoal">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                                <div class="w-16 h-16 bg-hot-pink/90 rounded-full flex items-center justify-center transform scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
+                                    <i data-lucide="play" class="w-6 h-6 text-white fill-current"></i>
+                                </div>
+                            </div>
+                            <img src="VD4.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <h3 class="text-xl font-display font-bold mt-4 group-hover:text-hot-pink transition-colors uppercase">04. Procedimento Henna & Design de Sobrancelhas | Vídeo Profissional</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Trabalhos: ARTES -->
+            <section class="py-20 px-6 md:px-20 border-t border-gray-900 bg-void-black">
+                <div class="mb-12">
+                    <span class="text-hot-pink uppercase tracking-widest text-sm font-bold">Visual Design</span>
+                    <h2 class="text-4xl md:text-6xl font-display font-bold">ARTES DIGITAIS <span class="text-hot-pink">.</span></h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 01" data-desc="Conceito visual para marca." data-src="art1.jpeg">
+                        <img src="art1.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 02" data-desc="Ilustração digital." data-src="art2.jpeg">
+                        <img src="art2.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 03" data-desc="Composição visual." data-src="art3.jpeg">
+                        <img src="art3.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 04" data-desc="Design de comunicação." data-src="art4.jpeg">
+                        <img src="art4.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 05" data-desc="Identidade Visual." data-src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800">
+                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 06" data-desc="Typography Design." data-src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?w=800">
+                        <img src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 07" data-desc="Poster Art." data-src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 08" data-desc="Branding Concept." data-src="https://images.unsplash.com/photo-1572044162444-ad60f128bde7?w=800">
+                        <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bde7?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 09" data-desc="Social Media Kit." data-src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800">
+                        <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="aspect-square bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Arte 10" data-desc="Photography & Retouching." data-src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Trabalhos: IA IMAGES (NEW) -->
+            <section class="py-20 px-6 md:px-20 border-t border-gray-900 bg-void-black">
+                <div class="mb-12">
+                    <span class="text-hot-pink uppercase tracking-widest text-sm font-bold">Inteligência Artificial</span>
+                    <h2 class="text-4xl md:text-6xl font-display font-bold">FOTOS COM IA <span class="text-hot-pink">.</span></h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- IA Item 01 -->
+                    <div class="aspect-[4/5] bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Transformação Visual com IA para Foto de Produto de Páscoa" data-desc="Na primeira imagem (antes), o produto aparece sem uso de IA, com fundo inadequado e sem apelo visual.
+Na segunda imagem (depois), o mesmo produto é mantido exatamente igual, sem alterações, e recebe apenas um novo fundo em temática de Páscoa, realista e atrativo, criado com IA, valorizando a apresentação e o impacto visual." data-src="https://i.postimg.cc/DmVFtwR9/ia1.png">
+                        <img src="ia01.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                        <div class="absolute bottom-4 left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-hot-pink text-[10px] font-bold px-2 py-1 rounded">Transformação Visual com IA para Foto de Produto de Páscoa</span>
+                        </div>
+                    </div>
+                    <!-- IA Item 02 -->
+                    <div class="aspect-[4/5] bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="O Protagonista da Cena: Produto em Destaque com Conceito Cinematográfico" data-desc="A intenção deste post é transmitir a ideia de que o produto ocupa o lugar principal da experiência cinematográfica. Posicionado no primeiro assento, ele assume o papel de protagonista, destacando-se no ambiente e conduzindo o olhar para si. A cena reforça exclusividade, presença e relevância, valorizando o produto de forma sutil, porém estratégica." data-src="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=800">
+                        <img src="ia2.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                        <div class="absolute bottom-4 left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-hot-pink text-[10px] font-bold px-2 py-1 rounded">O Protagonista da Cena: Produto em Destaque com Conceito Cinematográfico</span>
+                        </div>
+                    </div>
+                    <!-- IA Item 03 -->
+                    <div class="aspect-[4/5] bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Product Shot IA" data-desc="Visualização de produto futurista com renderização via inteligência artificial." data-src="https://images.unsplash.com/photo-1673187311210-990a4df7538b?w=800">
+                        <img src="https://images.unsplash.com/photo-1673187311210-990a4df7538b?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                        <div class="absolute bottom-4 left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-hot-pink text-[10px] font-bold px-2 py-1 rounded">AI GENERATED</span>
+                        </div>
+                    </div>
+                    <!-- IA Item 04 -->
+                    <div class="aspect-[4/5] bg-charcoal overflow-hidden group cursor-pointer project-trigger nav-item" data-type="image" data-title="Cenário Surrealista IA" data-desc="Composição de paisagem onírica unindo elementos da natureza e tecnologia." data-src="https://images.unsplash.com/photo-1676288176918-912f7cc8c99b?w=800">
+                        <img src="https://images.unsplash.com/photo-1676288176918-912f7cc8c99b?w=400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                        <div class="absolute bottom-4 left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-hot-pink text-[10px] font-bold px-2 py-1 rounded">AI GENERATED</span>
                         </div>
                     </div>
                 </div>
@@ -318,32 +405,45 @@
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-hot-pink to-transparent opacity-50"></div>
                 <h2 class="text-4xl md:text-6xl font-display font-bold mb-16 text-center">EXPERTISE</h2>
                 <div class="space-y-1">
-                    <div class="group border-b border-gray-800 py-8 hover:bg-void-black px-4 transition-colors cursor-pointer nav-item">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-2xl md:text-4xl font-display font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">01. FILMMAKING</h3>
-                            <i data-lucide="clapperboard" class="text-gray-600 group-hover:text-hot-pink w-8 h-8 transition-colors"></i>
+                    <!-- Item 01 -->
+                    <div class="group border-b border-gray-800 py-10 hover:bg-void-black px-4 transition-colors cursor-pointer nav-item">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                            <div>
+                                <h3 class="text-2xl md:text-4xl font-display font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">01. FILMMAKING</h3>
+                                <p class="text-gray-500 text-sm mt-2 max-w-md group-hover:text-gray-300 transition-all duration-300 group-hover:translate-x-4">Direção, captação e edição cinematográfica para marcas que buscam autoridade visual.</p>
+                            </div>
+                            <i data-lucide="clapperboard" class="text-gray-600 group-hover:text-hot-pink w-8 h-8 md:w-12 md:h-12 transition-all duration-300"></i>
                         </div>
-                        <p class="h-0 overflow-hidden group-hover:h-auto group-hover:mt-4 text-gray-500 transition-all duration-300 max-w-2xl">
-                            Roteirização, Captação 4K/6K, Edição Dinâmica, Color Grading, Motion Graphics, Sound Design.
-                        </p>
                     </div>
-                    <div class="group border-b border-gray-800 py-8 hover:bg-void-black px-4 transition-colors cursor-pointer nav-item">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-2xl md:text-4xl font-display font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">02. DESIGN GRÁFICO</h3>
-                            <i data-lucide="pen-tool" class="text-gray-600 group-hover:text-hot-pink w-8 h-8 transition-colors"></i>
+                    <!-- Item 02 -->
+                    <div class="group border-b border-gray-800 py-10 hover:bg-void-black px-4 transition-colors cursor-pointer nav-item">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                            <div>
+                                <h3 class="text-2xl md:text-4xl font-display font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">02. DESIGN GRÁFICO</h3>
+                                <p class="text-gray-500 text-sm mt-2 max-w-md group-hover:text-gray-300 transition-all duration-300 group-hover:translate-x-4">Identidade visual e materiais digitais criados com base em psicologia do design.</p>
+                            </div>
+                            <i data-lucide="pen-tool" class="text-gray-600 group-hover:text-hot-pink w-8 h-8 md:w-12 md:h-12 transition-all duration-300"></i>
                         </div>
-                        <p class="h-0 overflow-hidden group-hover:h-auto group-hover:mt-4 text-gray-500 transition-all duration-300 max-w-2xl">
-                            Identidade Visual, Web Design (UI/UX), Social Media Design, Capas de Youtube, Apresentações.
-                        </p>
                     </div>
-                    <div class="group border-b border-gray-800 py-8 hover:bg-void-black px-4 transition-colors cursor-pointer nav-item">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-2xl md:text-4xl font-display font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">03. MARKETING</h3>
-                            <i data-lucide="bar-chart-2" class="text-gray-600 group-hover:text-hot-pink w-8 h-8 transition-colors"></i>
+                    <!-- Item 03 -->
+                    <div class="group border-b border-gray-800 py-10 hover:bg-void-black px-4 transition-colors cursor-pointer nav-item">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                            <div>
+                                <h3 class="text-2xl md:text-4xl font-display font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">03. ESTRATÉGIA CRIATIVA</h3>
+                                <p class="text-gray-500 text-sm mt-2 max-w-md group-hover:text-gray-300 transition-all duration-300 group-hover:translate-x-4">Planejamento de campanhas e posicionamento de imagem para redes sociais.</p>
+                            </div>
+                            <i data-lucide="lightbulb" class="text-gray-600 group-hover:text-hot-pink w-8 h-8 md:w-12 md:h-12 transition-all duration-300"></i>
                         </div>
-                        <p class="h-0 overflow-hidden group-hover:h-auto group-hover:mt-4 text-gray-500 transition-all duration-300 max-w-2xl">
-                            Gestão de Tráfego, Inbound Marketing, Estratégia de Conteúdo, Copywriting, Análise de Dados.
-                        </p>
+                    </div>
+                    <!-- Item 04 -->
+                    <div class="group border-b border-gray-800 py-10 hover:bg-void-black px-4 transition-colors cursor-pointer nav-item">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                            <div>
+                                <h3 class="text-2xl md:text-4xl font-display font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">04. MOTION DESIGN</h3>
+                                <p class="text-gray-500 text-sm mt-2 max-w-md group-hover:text-gray-300 transition-all duration-300 group-hover:translate-x-4">Animações que dão vida à marca e prendem a atenção no scroll infinito.</p>
+                            </div>
+                            <i data-lucide="activity" class="text-gray-600 group-hover:text-hot-pink w-8 h-8 md:w-12 md:h-12 transition-all duration-300"></i>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -355,22 +455,6 @@
                     <a href="mailto:anacarolinabergarascomparim@gmail.com" class="text-3xl md:text-6xl lg:text-7xl font-display font-black text-white hover:text-hot-pink transition-colors leading-none break-all nav-item block">
                         anacarolinabergarascomparim<br>@gmail.com
                     </a>
-                    
-                    <div class="grid md:grid-cols-2 gap-12 mt-20">
-                        <div>
-                            <h4 class="text-gray-500 uppercase text-xs tracking-widest mb-4">Redes Sociais</h4>
-                            <div class="flex flex-col space-y-2">
-                                <a href="#" class="hover:text-hot-pink transition-colors nav-item">Instagram</a>
-                                <a href="#" class="hover:text-hot-pink transition-colors nav-item">Behance</a>
-                                <a href="#" class="hover:text-hot-pink transition-colors nav-item">LinkedIn</a>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-gray-500 uppercase text-xs tracking-widest mb-4">Localização</h4>
-                            <p class="text-white">Sorocaba, São Paulo<br>Disponível para Remote</p>
-                            <p class="mt-4 text-gray-600 text-sm">&copy; 2026. Carol Scomparim.</p>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -382,7 +466,7 @@
             <i data-lucide="x" class="w-10 h-10"></i>
         </button>
         <div class="w-full max-w-6xl h-full flex flex-col justify-center">
-            <div id="modal-content" class="w-full h-[60vh] md:h-[70vh] bg-black rounded-lg overflow-hidden flex items-center justify-center mb-6 border border-gray-800 shadow-2xl"></div>
+            <div id="modal-content" class="w-full h-[60vh] md:h-[70vh] bg-black rounded-lg overflow-hidden flex items-center justify-center mb-6 border border-gray-800 shadow-2xl video-container"></div>
             <div class="text-center md:text-left">
                 <h3 id="modal-title" class="text-2xl md:text-4xl font-display font-bold mb-2"></h3>
                 <p id="modal-desc" class="text-gray-400"></p>
@@ -429,30 +513,39 @@
 
         projectTriggers.forEach(trigger => {
             trigger.addEventListener('click', () => {
-                const { type, src, title, desc } = trigger.dataset;
-                modalTitle.textContent = title;
-                modalDesc.textContent = desc;
+                const type = trigger.getAttribute('data-type');
+                const src = trigger.getAttribute('data-src');
+                const title = trigger.getAttribute('data-title');
+                const desc = trigger.getAttribute('data-desc');
+
+                modalTitle.innerText = title;
+                modalDesc.innerText = desc;
                 modalContent.innerHTML = '';
 
                 if (type === 'video') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = src;
-                    iframe.className = "w-full h-full";
-                    iframe.allow = "autoplay; fullscreen";
-                    modalContent.appendChild(iframe);
+                    const video = document.createElement('video');
+                    video.src = src;
+                    video.controls = true;
+                    video.autoplay = true;
+                    modalContent.appendChild(video);
                 } else {
                     const img = document.createElement('img');
                     img.src = src;
-                    img.className = "w-full h-full object-contain";
+                    img.className = 'max-w-full max-h-full object-contain';
                     modalContent.appendChild(img);
                 }
-                modal.classList.replace('closed', 'open');
+
+                modal.classList.remove('closed');
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
             });
         });
 
         closeModal.addEventListener('click', () => {
-            modal.classList.replace('open', 'closed');
-            setTimeout(() => modalContent.innerHTML = '', 300);
+            modal.classList.remove('open');
+            modal.classList.add('closed');
+            modalContent.innerHTML = '';
+            document.body.style.overflow = '';
         });
 
         updateInteractiveItems();
